@@ -1,14 +1,12 @@
 header {
-    background: url(images/central_park.jpg) 0 -200px no-repeat;  /* place image as background */
-    background-size: 1500px;
-    /*background-position: 0 -200px;*/
-    /*background-repeat: no-repeat;*/
-    height: 400px; /* give header some height to display the background image */
-    padding-top: 100px;
-    padding-left: 100px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  background: url(images/central_park.jpg) center/cover no-repeat; 
+  height: 400px; 
+  padding-top: 100px;
+  padding-left: 100px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center; /* Center text for better look on smaller screens */
+}
   li {
     list-style-type: none;
     display: inline;
@@ -35,6 +33,33 @@ header {
     text-align: center;
     padding-top: 2px;
   }
+
+  .cards {
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+  }
+  
+  .card img {
+    width: 100%; /* Makes image fully responsive */
+    height: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    .cards {
+      flex-direction: column; /* Stacks cards vertically */
+      text-align: center;
+    }
+  }
+  
+  /* 2 Columns Layout at 600px or Higher */
+  @media screen and (min-width: 600px) {
+    .cards {
+      flex-direction: row; /* Display cards side by side */
+    }
+  }
+
   main {
     margin: 50px;
   }
